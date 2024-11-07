@@ -1,7 +1,7 @@
 package periods
 
 import (
-	"github.com/daandejongen/dates"
+	"github.com/daandejongen/dates/dates"
 )
 
 type Period struct {
