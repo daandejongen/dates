@@ -1,11 +1,5 @@
 package dates
 
-type Date struct {
-	DayOfMonth int
-	Month int
-	Year int
-}
-
 func (date Date) IsBeforeOrOn(other Date) bool {
 	if date == other {
 		return true

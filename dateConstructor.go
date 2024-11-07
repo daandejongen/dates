@@ -1,27 +1,11 @@
 package dates
 
-import (
-	"github.com/daandejongen/utils/validation"
-)
-
-type DateConstructor interface {
-	New(dayOfMonth, month, year int) Date
-}
-
-type dateConstructor struct {
-	validator validation.ObjectValidator[Date]
-}
-
-func NewDateConstructor(validator validation.ObjectValidator[Date]) DateConstructor {
-	return dateConstructor{validator}
-}
-
-func (constructor dateConstructor) New(dayOfMonth, month, year int) Date {
-	return constructor.validator.Validate(Date{dayOfMonth, month, year}, []func(Date) bool{
-		hasValidDayOfMonth,
-		hasValidMonth,
-		hasValidYear,
-	})
+func NewDate(dayOfMonth, month, year int) Date {
+	date := Date{DayOfMonth: dayOfMonth, Month: month, Year: year}
+	if !hasValidDayOfMonth(date) || !hasValidMonth(date) || !hasValidYear(date) {
+		return Date{}
+	}
+	return date
 }
 
 func hasValidDayOfMonth(date Date) bool {

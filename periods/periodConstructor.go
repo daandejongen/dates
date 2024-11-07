@@ -1,7 +1,6 @@
 package periods
 
 import (
-	"github.com/daandejongen/utils/validation"
 	"github.com/daandejongen/dates"
 )
 
@@ -11,24 +10,20 @@ type PeriodConstructor interface {
 
 type periodConstructor struct {
 	settings PeriodSettings
-	validator validation.ObjectValidator[Period]
 }
 
-func NewPeriodConstructor(validator validation.ObjectValidator[Period], settings PeriodSettings) periodConstructor {
-	return periodConstructor{settings, validator}
+func NewPeriodConstructor(settings PeriodSettings) periodConstructor {
+	return periodConstructor{settings}
 }
 
 func (constructor periodConstructor) New(start, end dates.Date) Period {
-	requirements := []func(Period) bool{
-		startIsBeforeEnd,
+	period := Period{start, end}
+	if !period.Start.IsBefore(period.End) {
+		return Period{}
 	}
-	return constructor.validator.Validate(Period{start, end}, requirements)
+	return period
 }
 
 func (constructor periodConstructor) NewMonth(start dates.Date) Period {
 	return constructor.New(start, start.AddMonths(1).SubtractDays(1))
-}
-
-func startIsBeforeEnd(period Period) bool {
-	return period.Start.IsBefore(period.End)
 }

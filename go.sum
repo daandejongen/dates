@@ -4,6 +4,8 @@ github.com/daandejongen/utils v0.0.2 h1:OhKsPOy9UY+2sb6M1TpB7CPrUpkvEuvYpkchCzai
 github.com/daandejongen/utils v0.0.2/go.mod h1:pPimTvxbiUGqB02jbmuFcIwTYgERFF+K648kq2dFXKc=
 github.com/daandejongen/utils v0.0.3 h1:mQhjhNKxM7RN1k3uKkj6AA0zbwbRvm2l5EGA5UW+uVU=
 github.com/daandejongen/utils v0.0.3/go.mod h1:pPimTvxbiUGqB02jbmuFcIwTYgERFF+K648kq2dFXKc=
+github.com/daandejongen/utils v0.7.0 h1:hQlAFQ9NW+DMLpgzuRU27C+LtZx7C3SoONZopFksIDY=
+github.com/daandejongen/utils v0.7.0/go.mod h1:JHKEC6BkVQlPq0FOK0RX2dp17d50ppKbdd9q/wpmBAw=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
